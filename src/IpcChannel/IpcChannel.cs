@@ -63,13 +63,20 @@ public class IpcChannel<T> where T : class
     /// <param name="token">Cancellation token to abort send operation</param>
     public static async Task Send(string channelId, T message, int timeoutInMs = Timeout.Infinite, CancellationToken? token = null)
     {
-        var pipe = new NamedPipeClientStream(".", channelId, PipeDirection.Out, PipeOptions.Asynchronous);
-        await pipe.ConnectAsync(timeoutInMs, token ?? CancellationToken.None);
+        try
+        {
+            var pipe = new NamedPipeClientStream(".", channelId, PipeDirection.Out, PipeOptions.Asynchronous);
+            await pipe.ConnectAsync(timeoutInMs, token ?? CancellationToken.None);
 
-        var messageJson = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(message));
+            var messageJson = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(message));
 
-        await pipe.WriteAsync(messageJson);
-        await pipe.FlushAsync();
+            await pipe.WriteAsync(messageJson);
+            await pipe.FlushAsync();
+        }
+        catch (Exception e) when (e is TimeoutException)
+        {
+            // ignore timout exceptions
+        }
     }
 
     private IObservable<string> CreateNamedPipeObservable() =>
