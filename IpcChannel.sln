@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AA4F8442-713
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IpcChannel", "src\IpcChannel\IpcChannel.csproj", "{AD41B4FE-1547-4C7A-9EB4-5C9866065874}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F2EE30C5-79E2-40F8-9C7F-0C962CF6F457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IpcChannel.IntegrationTests", "test\IpcChannel.IntegrationTests\IpcChannel.IntegrationTests.csproj", "{4F30A25E-7994-4203-A6FA-A92DC4DEBBC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,13 @@ Global
 		{AD41B4FE-1547-4C7A-9EB4-5C9866065874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD41B4FE-1547-4C7A-9EB4-5C9866065874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD41B4FE-1547-4C7A-9EB4-5C9866065874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F30A25E-7994-4203-A6FA-A92DC4DEBBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F30A25E-7994-4203-A6FA-A92DC4DEBBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F30A25E-7994-4203-A6FA-A92DC4DEBBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F30A25E-7994-4203-A6FA-A92DC4DEBBC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AD41B4FE-1547-4C7A-9EB4-5C9866065874} = {AA4F8442-713E-4C82-9D48-F10686C0D1F9}
+		{4F30A25E-7994-4203-A6FA-A92DC4DEBBC0} = {F2EE30C5-79E2-40F8-9C7F-0C962CF6F457}
 	EndGlobalSection
 EndGlobal
